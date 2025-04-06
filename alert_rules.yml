@@ -1,0 +1,12 @@
+groups:
+  - name: node_network_error
+    rules:
+      - alert: node_network_error_alert
+        expr: node_network_error_rule > 10
+        for: 1m
+        annotations:
+          summary: "notwork error in {{ $labels.instance }}"
+          description: "network error is {{ $value }}"
+
+
+

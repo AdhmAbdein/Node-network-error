@@ -1,0 +1,8 @@
+
+groups:
+  - name: node_network_error
+    rules:
+      - record: node_network_error_rule
+        expr: rate(node_network_recieve_errs_total[1m]) + rate(node_network_transmit_errs_total[1m])
+        labels:
+          node1: node_network_error
